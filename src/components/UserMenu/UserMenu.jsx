@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const StyledStack = styled(Stack)({
   flexDirection: 'row',
   alignItems: 'center',
-  marginRight: '16px', // Adjust the margin as needed
+  marginRight: '16px', 
 });
 
 const UserMenu = () => {
@@ -38,13 +38,32 @@ const UserMenu = () => {
   }
 
   function stringAvatar(name) {
-    return {
-      sx: {
-        bgcolor: stringToColor(name),
-      },
-      children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
-    };
+    if (name && name.split(' ').length >= 2) {
+      return {
+        sx: {
+          bgcolor: stringToColor(name),
+        },
+        children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+      };
+    } else if (name) {
+      // Handle the case where there's only one word in the name
+      return {
+        sx: {
+          bgcolor: stringToColor(name),
+        },
+        children: name[0],
+      };
+    } else {
+      // Handle the case where name is undefined or empty
+      return {
+        sx: {
+          bgcolor: 'defaultBackgroundColor', // Provide a default background color
+        },
+        children: 'N', // Provide a default initial if name is empty
+      };
+    }
   }
+  
 
   return (
     <StyledStack direction="row" spacing={2}>
