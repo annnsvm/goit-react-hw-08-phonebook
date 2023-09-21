@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 import { useAuth } from 'hooks';
 import React from 'react';
 import { useDispatch } from 'react-redux';
