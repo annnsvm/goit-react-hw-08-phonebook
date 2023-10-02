@@ -21,7 +21,7 @@ const HomeScreen = () => {
       }}
     >
       <Typography variant="h2" component="h1" text-align="center">
-        Welcome to your Phone book
+        Welcome to your Phone Book
       </Typography>
       <Stack direction="row" spacing={20} m={20}>
         <PhoneEnabledIcon sx={{ fontSize: 200 }} color="primary"/>
